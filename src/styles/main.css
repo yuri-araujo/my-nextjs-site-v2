@@ -2,10 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .menu-square {
-    @apply flex justify-center items-center transition-all border border-slate-900 dark:border-white dark:hover:border-sky-400 bg-slate-200 dark:bg-slate-900 hover:scale-110  transform-gpu z-0 hover:z-10 dark:hover:text-sky-400 dark:text-white text-slate-900 hover:border-sky-600 hover:text-sky-600 rounded;
+@layer base {
+  html {
+    --scroll-behavior: smooth !important;
+    scroll-behavior: smooth !important;
   }
+
+  span, p {
+    @apply text-slate-700 dark:text-white
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-200
+  }
+}
+
+@layer components {
   .title {
     @apply text-2xl font-bold text-slate-900 dark:text-white;
   }
@@ -13,20 +40,16 @@
     @apply text-sm text-slate-900 dark:text-white;
   }
   .button {
-    @apply flex p-2 justify-center items-center transition-all border rounded-none dark:border-white dark:bg-slate-900
-    dark:text-white font-bold hover:shadow-[inset_20rem_0_0_0] hover:shadow-sky-800 duration-300
-    relative active:top-[2px] active:shadow-teal-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:animate-none disabled:shadow-none disabled:top-0 text-slate-900 border-slate-900;
-  }
-
-  .button-red {
-    @apply button hover:shadow-red-800;
+    @apply flex p-2 justify-center items-center transition-all border rounded-none
+    font-bold hover:text-slate-200 hover:shadow-[inset_20rem_0_0_0] hover:shadow-sky-800 duration-300 relative active:top-[2px] active:shadow-indigo-900 disabled:text-slate-700 disabled:cursor-not-allowed disabled:opacity-50 disabled:animate-none disabled:shadow-none disabled:top-0 text-slate-900 border-slate-900
+    dark:active:shadow-indigo-900 dark:border-white dark:bg-transparent dark:text-white dark:hover:text-white dark:hover:shadow-[inset_20rem_0_0_0] dark:hover:shadow-sky-800;
   }
 
   .my-input {
-    @apply p-2 order-2 bg-transparent border-0 border-b focus:border-b-sky-400 focus:text-sky-400 outline-none invalid:text-red-500 invalid:border-red-500 transition-all duration-300 border-slate-900 dark:border-white;
+    @apply p-2 order-2 bg-transparent border-0 border-b dark:focus:border-b-sky-400 dark:focus:text-sky-400 outline-none invalid:text-red-600 invalid:border-red-600  dark:invalid:text-red-500 dark:invalid:border-red-500 transition-all duration-300 border-slate-900 dark:border-white focus:border-b-sky-600 focus:text-sky-600;
   }
   .div-input {
-    @apply order-2 bg-transparent before:transition-all before:duration-500 relative before:absolute before:bottom-0 before:left-0 before:bg-sky-400 before:h-[1px] hover:before:w-full before:w-0 before:z-10 before:content-[''];
+    @apply order-2 bg-transparent before:transition-all before:duration-500 relative before:absolute before:bottom-0 before:left-0 dark:before:bg-sky-400 before:bg-sky-600 before:h-[1px] hover:before:w-full before:w-0 before:z-10 before:content-[''];
   }
 }
 
@@ -39,7 +62,7 @@
     transform-style: preserve-3d;
   }
 
-  .my-rotate-y-180{
+  .my-rotate-y-180 {
     transform: rotateY(180deg);
   }
 

@@ -5,6 +5,12 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    {
+      pattern: /(border|text)-(red|green|blue|sky|purple|teal|indigo|rose|pink|violet|cyan|gray)-(400|500|600|700)/,
+      variants: ['dark','group-hover','hover'],
+    }
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -16,10 +22,6 @@ module.exports = {
         'twitter': '#1da1f2',
       },
       keyframes: {
-        // floating: {
-        //   "0%, 100%": { transform: "translate(0px,0px)" },
-        //   "50%": { transform: "translate(4px,-4px)" },
-        // },
         floating: {
           "0%, 100%": { transform: "translate(4px,4px)" },
           "25%": { transform: "translate(-4px, 4px)" },
@@ -48,15 +50,21 @@ module.exports = {
           "0%": { transform: "rotate(360deg)" },
           "100%": { transform: "rotate(0deg)" },
         },
+        wave: {
+          "0%": { transform: "translateY(0rem)" },
+          "50%": { transform: "translateY(-0.5rem)" },
+          "100%": { transform: "translateY(0rem)" },
+        }
       },
       animation: {
-        floating: "floating 6s ease-in-out infinite",
+        floating: "floating 18s ease-in-out infinite",
         fadein: "fadein 300ms ease-in-out",
         glow: "glow 2500ms linear infinite",
         blinker: "blinker 1s linear infinite",
         slideright: "slideright 200ms ease-in-out forwards",
         rotate: "rotate 60s linear infinite",
-        'rotate-reverse': 'rotate-reverse 60s linear infinite'
+        'rotate-reverse': 'rotate-reverse 60s linear infinite',
+        wave: "wave 1s ease-in-out infinite"
       },
     },
   },

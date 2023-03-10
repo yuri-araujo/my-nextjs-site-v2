@@ -1,0 +1,16 @@
+{
+  "first-paragraph": "Meu nome é ",
+  "second-paragraph": {
+    "first-line": "Desenvolvedor front-end",
+    "second-line": "brasileiro de 21 anos"
+  },
+  "third-paragraph": {
+    "first-line": "Eu gosto de ",
+    "second-line": "desenvolver aplicações web",
+    "third-line": ", principalmente com ",
+    "fourth-line": ", porém também tenho interesses em ",
+    "fifth-line": "outras tecnologias",
+    "sixth-line": " e busco cada vez mais expandir meu repertório e poder atuar como desenvolvedor full-stack."
+  },
+  "page-indicator": "Sobre"
+}

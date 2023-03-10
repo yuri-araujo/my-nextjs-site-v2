@@ -1,122 +1,138 @@
 import DivGenerator from "@/components/DivGenerator";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 import Ferramentas from "../components/StackCircles/Ferramentas";
 import Frameworks from "../components/StackCircles/Frameworks";
 import Linguagens from "../components/StackCircles/Linguagens";
 
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["stack"])),
+      // Will be passed to the page component as props
+    },
+  };
+}
+
 function Stack() {
+  const { t: translate } = useTranslation("stack")
+
   return (
     <section
       id="stack"
-      className="relative flex items-center justify-between w-4/5 h-screen bg-transparent text-[1rem] text-slate-900 dark:text-gray-200 gap-20 font-bold"
+      className="relative flex items-center justify-between w-full h-screen bg-transparent text-[1rem] text-slate-900 dark:text-gray-200 gap-20 font-bold"
     >
       <DivGenerator
-        amountOfDivs={26}
+        amountOfDivs={27}
         className="absolute left-[-5rem] flex flex-col text-[1.2rem] text-gray-400"
         useNumbersAsContent
       />
       <div className="text-[1.2rem]">
-        <div className="text-sky-300">&#123;</div>
+        <div className="text-sky-600 dark:text-sky-300">&#123;</div>
         <div className="">
-          <span className="tracking-[0.5rem] opacity-20">..</span>linguagens:{" "}
-          <span className="text-purple-500">&#91;</span>
+          <span className="tracking-[0.5rem] dark:opacity-20">..</span>{translate("languages")}:{" "}
+          <span className="text-purple-600 dark:text-purple-500">&#91;</span>
         </div>
-        <div className="text-yellow-200">
-          <span className="tracking-[0.5rem] opacity-20">....</span>&ldquo;html&ldquo;
-          <span className="text-white">,</span>
+        <div className="text-yellow-600 dark:text-yellow-200">
+          <span className="tracking-[0.5rem] dark:opacity-20">....</span>&ldquo;html&ldquo;
+          <span className="dark:text-white">,</span>
         </div>
-        <div className="text-yellow-200">
-          <span className="tracking-[0.5rem] opacity-20">....</span>&ldquo;css&ldquo;
-          <span className="text-white">,</span>
+        <div className="text-yellow-600 dark:text-yellow-200">
+          <span className="tracking-[0.5rem] dark:opacity-20">....</span>&ldquo;css&ldquo;
+          <span className="dark:text-white">,</span>
         </div>
-        <div className="text-yellow-200">
-          <span className="tracking-[0.5rem] opacity-20">....</span>
-          &ldquo;javascript&ldquo;<span className="text-white">,</span>
+        <div className="text-yellow-600 dark:text-yellow-200">
+          <span className="tracking-[0.5rem] dark:opacity-20">....</span>
+          &ldquo;javascript&ldquo;<span className="dark:text-white">,</span>
         </div>
-        <div className="text-yellow-200">
-          <span className="tracking-[0.5rem] opacity-20">....</span>
-          &ldquo;typescript&ldquo;<span className="text-white">,</span>
+        <div className="text-yellow-600 dark:text-yellow-200">
+          <span className="tracking-[0.5rem] dark:opacity-20">....</span>
+          &ldquo;typescript&ldquo;<span className="dark:text-white">,</span>
         </div>
-        <div className="text-yellow-200">
-          <span className="tracking-[0.5rem] opacity-20">....</span>&ldquo;react&ldquo;
-          <span className="text-white">,</span>
+        <div className="text-yellow-600 dark:text-yellow-200">
+          <span className="tracking-[0.5rem] dark:opacity-20">....</span>&ldquo;react&ldquo;
+          <span className="dark:text-white">,</span>
         </div>
-        <div className="text-yellow-200">
-          <span className="tracking-[0.5rem] opacity-20">....</span>&ldquo;mysql&ldquo;
-          <span className="text-white">,</span>
+        <div className="text-yellow-600 dark:text-yellow-200">
+          <span className="tracking-[0.5rem] dark:opacity-20">....</span>&ldquo;mysql&ldquo;
+          <span className="dark:text-white">,</span>
         </div>
-        <div className="text-yellow-200">
-          <span className="tracking-[0.5rem] opacity-20">....</span>&ldquo;java&ldquo;
+        <div className="text-yellow-600 dark:text-yellow-200">
+          <span className="tracking-[0.5rem] dark:opacity-20">....</span>&ldquo;java&ldquo;
         </div>
-        <div className="">
-          <span className="tracking-[0.5rem] opacity-20">..</span>
-          <span className="text-purple-500">&#93;</span>,
-        </div>
-        <div className="">
-          <span className="tracking-[0.5rem] opacity-20">..</span>frameworks:{" "}
-          <span className="text-purple-500">&#91;</span>
-        </div>
-        <div className="text-yellow-200 ">
-          <span className="tracking-[0.5rem] opacity-20">....</span>&ldquo;nextjs&ldquo;
-          <span className="text-white">,</span>
-        </div>
-        <div className="text-yellow-200 ">
-          <span className="tracking-[0.5rem] opacity-20">....</span>&ldquo;angular&ldquo;
-          <span className="text-white">,</span>
-        </div>
-        <div className="text-yellow-200 ">
-          <span className="tracking-[0.5rem] opacity-20">....</span>&ldquo;spring&ldquo;
-          <span className="text-white">,</span>
-        </div>
-        <div className="text-yellow-200 ">
-          <span className="tracking-[0.5rem] opacity-20">....</span>&ldquo;electron&ldquo;
-          <span className="text-white">,</span>
-        </div>
-        <div className="text-yellow-200 ">
-          <span className="tracking-[0.5rem] opacity-20">....</span>&ldquo;dotnet&ldquo;
+        <div className="text-yellow-600 dark:text-yellow-200">
+          <span className="tracking-[0.5rem] dark:opacity-20">....</span>&ldquo;ruby&ldquo;
         </div>
         <div className="">
-          <span className="tracking-[0.5rem] opacity-20">..</span>
-          <span className="text-purple-500">&#93;</span>,
+          <span className="tracking-[0.5rem] dark:opacity-20">..</span>
+          <span className="text-purple-600 dark:text-purple-500">&#93;</span>,
         </div>
         <div className="">
-          <span className="tracking-[0.5rem] opacity-20">..</span>ferramentas:{" "}
-          <span className="text-purple-500">&#91;</span>
+          <span className="tracking-[0.5rem] dark:opacity-20">..</span>frameworks:{" "}
+          <span className="text-purple-600 dark:text-purple-500">&#91;</span>
         </div>
-        <div className="text-yellow-200 ">
-          <span className="tracking-[0.5rem] opacity-20">....</span>
-          &ldquo;tailwindcss&ldquo;<span className="text-white">,</span>
+        <div className="text-yellow-600 dark:text-yellow-200 ">
+          <span className="tracking-[0.5rem] dark:opacity-20">....</span>&ldquo;nextjs&ldquo;
+          <span className="dark:text-white">,</span>
         </div>
-        <div className="text-yellow-200 ">
-          <span className="tracking-[0.5rem] opacity-20">....</span>&ldquo;docker&ldquo;
-          <span className="text-white">,</span>
+        <div className="text-yellow-600 dark:text-yellow-200 ">
+          <span className="tracking-[0.5rem] dark:opacity-20">....</span>&ldquo;angular&ldquo;
+          <span className="dark:text-white">,</span>
         </div>
-        <div className="text-yellow-200 ">
-          <span className="tracking-[0.5rem] opacity-20">....</span>&ldquo;vscode&ldquo;
-          <span className="text-white">,</span>
+        <div className="text-yellow-600 dark:text-yellow-200 ">
+          <span className="tracking-[0.5rem] dark:opacity-20">....</span>&ldquo;spring&ldquo;
+          <span className="dark:text-white">,</span>
         </div>
-        <div className="text-yellow-200 ">
-          <span className="tracking-[0.5rem] opacity-20">....</span>&ldquo;vim&ldquo;
-          <span className="text-white">,</span>
+        <div className="text-yellow-600 dark:text-yellow-200 ">
+          <span className="tracking-[0.5rem] dark:opacity-20">....</span>&ldquo;electron&ldquo;
+          <span className="dark:text-white">,</span>
         </div>
-        <div className="text-yellow-200 ">
-          <span className="tracking-[0.5rem] opacity-20">....</span>&ldquo;linux&ldquo;
-          <span className="text-white">,</span>
+        <div className="text-yellow-600 dark:text-yellow-200 ">
+          <span className="tracking-[0.5rem] dark:opacity-20">....</span>&ldquo;vitest&ldquo;
         </div>
-        <div className="text-yellow-200 ">
-          <span className="tracking-[0.5rem] opacity-20">....</span>&ldquo;git&ldquo;
+        <div className="">
+          <span className="tracking-[0.5rem] dark:opacity-20">..</span>
+          <span className="text-purple-600 dark:text-purple-500">&#93;</span>,
+        </div>
+        <div className="">
+          <span className="tracking-[0.5rem] dark:opacity-20">..</span>{translate("tools")}:{" "}
+          <span className="text-purple-600 dark:text-purple-500">&#91;</span>
+        </div>
+        <div className="text-yellow-600 dark:text-yellow-200 ">
+          <span className="tracking-[0.5rem] dark:opacity-20">....</span>
+          &ldquo;tailwindcss&ldquo;<span className="dark:text-white">,</span>
+        </div>
+        <div className="text-yellow-600 dark:text-yellow-200 ">
+          <span className="tracking-[0.5rem] dark:opacity-20">....</span>&ldquo;docker&ldquo;
+          <span className="dark:text-white">,</span>
+        </div>
+        <div className="text-yellow-600 dark:text-yellow-200 ">
+          <span className="tracking-[0.5rem] dark:opacity-20">....</span>&ldquo;vscode&ldquo;
+          <span className="dark:text-white">,</span>
+        </div>
+        <div className="text-yellow-600 dark:text-yellow-200 ">
+          <span className="tracking-[0.5rem] dark:opacity-20">....</span>&ldquo;vim&ldquo;
+          <span className="dark:text-white">,</span>
+        </div>
+        <div className="text-yellow-600 dark:text-yellow-200 ">
+          <span className="tracking-[0.5rem] dark:opacity-20">....</span>&ldquo;linux&ldquo;
+          <span className="dark:text-white">,</span>
+        </div>
+        <div className="text-yellow-600 dark:text-yellow-200 ">
+          <span className="tracking-[0.5rem] dark:opacity-20">....</span>&ldquo;git&ldquo;
         </div>
         <div>
-          <span className="tracking-[0.5rem] opacity-20">..</span>
-          <span className="text-purple-500">&#93;</span>
+          <span className="tracking-[0.5rem] dark:opacity-20">..</span>
+          <span className="text-purple-600 dark:text-purple-500">&#93;</span>
         </div>
-        <div className="text-sky-300">&#125;</div>
+        <div className="text-sky-600 dark:text-sky-300">&#125;</div>
       </div>
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center mr-48">
         <Linguagens />
         <Frameworks />
         <Ferramentas />
       </div>
-      <span className="whitespace-nowrap opacity-[0.15] dark:opacity-[0.012] text-[300px] absolute font-bold inset-0  pointer-events-none">
+      <span className="whitespace-nowrap opacity-[0.04] dark:opacity-[0.012] text-[300px] absolute font-bold inset-0  pointer-events-none">
         Stack
       </span>
     </section>

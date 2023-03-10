@@ -1,25 +1,23 @@
 import React from "react";
+import { create } from "zustand";
 
 import { BsMoonStars, BsSun } from "react-icons/bs";
+import { useThemeStore } from "@/state/theme-store";
 
 function ThemeSwitcher() {
-  const [theme, setTheme] = React.useState<string | null>("dark");
+  const { isDark, switchTheme } = useThemeStore();
 
   React.useEffect(() => {
-    if (theme === "dark") {
+    if (isDark) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-  }, [theme]);
-
-  const handleThemeSwitch = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
+  }, [isDark]);
 
   return (
-    <label className="swap swap-rotate text-2xl hover:text-orange-600 dark:hover:text-indigo-400">
-      <input type="checkbox" onClick={handleThemeSwitch} />
+    <label className="swap swap-rotate text-2xl hover:text-red-600 dark:hover:text-indigo-300">
+      <input type="checkbox" onClick={switchTheme} />
       <BsMoonStars className="swap-off" />
       <BsSun className="swap-on" />
     </label>

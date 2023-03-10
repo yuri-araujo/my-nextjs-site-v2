@@ -16,7 +16,7 @@ function DivGenerator({
   const Array = [];
   for (let i = 0; i < amountOfDivs; i++)
     Array.push(
-      <div>
+      <div key={i}>
         {useNumbersAsContent ? (i+1).toString().padStart(2, "0") : content || ""}
       </div>
     );

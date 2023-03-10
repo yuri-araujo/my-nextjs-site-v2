@@ -1,10 +1,13 @@
-import { FaHtml5, FaCss3, FaReact } from "react-icons/fa";
-import { SiJavascript, SiTypescript, SiJava, SiMysql, SiElixir } from "react-icons/si";
+import { useTranslation } from "next-i18next";
+import { FaHtml5, FaCss3, FaReact, FaJava } from "react-icons/fa";
+import { SiJavascript, SiTypescript, SiMysql, SiRuby } from "react-icons/si";
 
 function Linguagens() {
+  const { t: translate } = useTranslation("stack")
+
   return (
     <>
-      <div className="dark:text-white text-[2rem] flex gap-4 flex-col w-[650px] h-[650px] animate-rotate border rounded-full group hover:border-teal-600 dark:hover:border-teal-400 hover:pause peer/linguagens border-slate-900 dark:border-white">
+      <div className="dark:text-white text-[2rem] flex gap-4 flex-col w-[650px] h-[650px] animate-rotate border rounded-full group hover:border-sky-600 dark:hover:border-sky-400 hover:pause peer/linguagens border-slate-900 dark:border-white">
         <div className="flex justify-center h-full relative top-2">
           <span className="transition-all hover:text-orange-400 place-self-start animate-rotate-reverse group-hover:pause flex">
             <FaHtml5 className="hover:scale-125 peer" />
@@ -43,7 +46,7 @@ function Linguagens() {
         </div>
         <div className="flex justify-around items-center h-full">
           <span className="transition-all hover:text-red-500 relative -bottom-14 -left-14 animate-rotate-reverse group-hover:pause">
-            <SiJava className="peer hover:scale-125" />
+            <FaJava className="peer hover:scale-125" />
             <span className="absolute left-10 top-0 w-0 peer-hover:w-20 transition-all duration-500 text-2xl font-bold overflow-hidden peer-hover:animate-slideright">
               Java
             </span>
@@ -56,17 +59,19 @@ function Linguagens() {
           </span>
         </div>
         <div className="flex justify-center h-full relative bottom-2">
-          <span className="transition-all hover:text-violet-500 place-self-end animate-rotate-reverse group-hover:pause">
-            <SiElixir className="peer hover:scale-125" />
+          <span className="transition-all hover:text-red-500 place-self-end animate-rotate-reverse group-hover:pause">
+            <SiRuby className="peer hover:scale-125" />
             <span className="absolute left-10 top-0 w-0 peer-hover:w-20 transition-all duration-500 text-2xl font-bold overflow-hidden peer-hover:animate-slideright">
-              Elixir
+              Ruby
             </span>
           </span>
         </div>
       </div>
-      <span className="text-white text-3xl font-bold tracking-[1rem] absolute top-[50px] opacity-0 peer-hover/linguagens:opacity-100">Linguagens</span>
+      <span className="text-3xl font-bold tracking-[1rem] absolute top-[50px] opacity-0 peer-hover/linguagens:opacity-100 first-letter:uppercase">
+        {translate("languages")}
+      </span>
     </>
   );
 }
 
-export default Linguagens
+export default Linguagens;

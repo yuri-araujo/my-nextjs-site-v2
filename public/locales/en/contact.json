@@ -1,0 +1,15 @@
+{
+  "github-description": "Follow my personal projects",
+  "linkedin-description": "My professional profile",
+  "contact-button": "Contact me",
+  "form": {
+    "title": "Let's talk",
+    "subtitle": "New projects, work, talk about code or anything",
+    "name-field": "Name",
+    "message-field": "Message",
+    "send-message-button": "Send message",
+    "clear-button": "Clear",
+    "back-button": "Back"
+  },
+  "page-indicator": "Contact"
+}

@@ -1,0 +1,16 @@
+{
+  "first-paragraph": "My name is ",
+  "second-paragraph": {
+    "first-line": "Front-end developer",
+    "second-line": "21 years old brazilian"
+  },
+  "third-paragraph": {
+    "first-line": "I like to ",
+    "second-line": "develop web applications",
+    "third-line": ", mainly with ",
+    "fourth-line": ", but i'm also interested in ",
+    "fifth-line": "other technologies",
+    "sixth-line": " and am aiming to expand my repertoire and be able to act as a full-stack developer."
+  },
+  "page-indicator": "About"
+}

@@ -1,10 +1,14 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 import { FaLinux, FaGitAlt, FaDocker } from "react-icons/fa";
 import { SiVim, SiVisualstudiocode, SiTailwindcss } from "react-icons/si";
 
 function Ferramentas() {
+  const { t: translate } = useTranslation("stack");
+
   return (
     <>
-      <div className="absolute dark:text-white text-[2rem] flex gap-4 flex-col w-[220px] h-[220px] animate-rotate border rounded-full group hover:border-teal-600 dark:hover:border-teal-400 hover:pause peer/ferramentas border-slate-900 dark:border-white">
+      <div className="absolute dark:text-white text-[2rem] flex gap-4 flex-col w-[220px] h-[220px] animate-rotate border rounded-full group hover:border-sky-600 dark:hover:border-sky-400 hover:pause peer/ferramentas border-slate-900 dark:border-white">
         <div className="flex justify-between items-center h-full w-[60%] place-self-center">
           <span className="transition-all hover:text-yellow-400 relative  animate-rotate-reverse group-hover:pause">
             <FaLinux className="peer hover:scale-125" />
@@ -48,11 +52,11 @@ function Ferramentas() {
           </span>
         </div>
       </div>
-      <span className="text-white text-3xl font-bold tracking-[1rem] absolute top-[50px] opacity-0 peer-hover/ferramentas:opacity-100">
-        Ferramentas
+      <span className="text-3xl font-bold tracking-[1rem] absolute top-[50px] opacity-0 peer-hover/ferramentas:opacity-100 first-letter:uppercase">
+        {translate("tools")}
       </span>
     </>
   );
 }
 
-export default Ferramentas
+export default Ferramentas;

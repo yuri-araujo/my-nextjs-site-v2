@@ -1,0 +1,15 @@
+{
+  "github-description": "Acompanhe meus projetos pessoais",
+  "linkedin-description": "Meu perfil profissional",
+  "contact-button": "Contate-me",
+  "form": {
+    "title": "Vamos conversar",
+    "subtitle": "Novos projetos, trabalho, papo sobre códigos ou qualquer coisa",
+    "name-field": "Nome",
+    "message-field": "Mensagem",
+    "send-message-button": "Enviar mensagem",
+    "clear-button": "Limpar",
+    "back-button": "Voltar"
+  },
+  "page-indicator": "Contato"
+}
