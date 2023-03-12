@@ -12,8 +12,8 @@ function Navbar() {
   const router = useRouter();
 
   return (
-    <nav className="flex bg-slate-300 justify-between items-center dark:bg-slate-800 dark:text-white text-slate-900 w-full h-12 border-b border-b-1 pt-[1px] border-sky-900 fixed z-20 pr-4">
-      <div className="flex gap-[1rem] text-xl items-center justify-center">
+    <nav className="flex bg-slate-300 justify-between items-center dark:bg-slate-800 dark:text-white text-slate-900 w-full h-12 border-b border-b-1 pt-[1px] border-sky-900 fixed z-20 pr-4 sm:justify-center sm:pr-0">
+      <div className="flex gap-[1rem] text-xl items-center justify-center sm:hidden">
         <Link href="#inicio">
           <MySimpleLogo />
         </Link>

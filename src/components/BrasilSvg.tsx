@@ -3,7 +3,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 function BrasilSvg() {
   return (
-    <div className="relative ease-in-out duration-700 hover:fill-sky-700 dark:hover:fill-sky-300 dark:fill-white fill-slate-700 dark:hover:text-sky-500 dark:text-white text-black group">
+    <div className="relative ease-in-out duration-700 hover:fill-sky-700 dark:hover:fill-sky-300 dark:fill-white fill-slate-700 dark:hover:text-sky-500 dark:text-white text-black group xl:hidden">
       <span className="absolute right-[-6rem] top-[29rem] text-[1rem] tracking-widest text-sky-700 dark:text-sky-300 border-b border-b-sky-700 dark:border-b-sky-300">São Paulo - Pindamonhangaba</span>
       <FaMapMarkerAlt className="absolute text-[4rem] bottom-[165px] right-[145px] group-hover:animate-bounce dark:text-sky-300 text-sky-700" />
       <svg

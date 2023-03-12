@@ -25,8 +25,8 @@ function index() {
           <link rel="shortcut icon" href="/favicon.ico" />
         </Head>
         <Navbar />
-        <div className="fixed h-full w-[1px] bg-sky-900 left-12 top-12" />
-        <div className="ml-24">
+        <div className="fixed h-full w-[1px] bg-sky-900 left-12 top-12 sm:hidden " />
+        <div className="ml-24 sm:ml-0">
           <Inicio />
           <Sobre />
           <Projetos />
