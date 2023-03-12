@@ -109,13 +109,13 @@ function Contact() {
               </div>
             </div>
           </div>
-          <div className="absolute my-rotate-y-180 backface-hidden w-[65%] h-fit lg:w-fit">
+          <div className="absolute my-rotate-y-180 backface-hidden w-fit h-fit">
             <div className="relative divide-y divide-solid divide-slate-900 dark:divide-white gap-4 p-16">
               <div className="p-4">
                 <h1 className="title hover:text-sky-600 dark:hover:text-sky-400 animate-glow">
                   {translate("form.title")}
                 </h1>
-                <h2 className="subtitle hover:text-sky-600 dark:hover:text-sky-400 whitespace-nowrap">
+                <h2 className="subtitle hover:text-sky-600 dark:hover:text-sky-400 whitespace-nowrap sm:whitespace-normal">
                   {translate("form.subtitle")}
                 </h2>
               </div>

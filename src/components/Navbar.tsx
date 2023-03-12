@@ -20,7 +20,7 @@ function Navbar() {
         <ThemeSwitcher />
         <LanguageSwitcher />
       </div>
-      <div className="flex gap-4 text-xl items-center justify-center tracking-wider">
+      <div className="flex gap-4 text-xl items-center justify-center tracking-wider sm:gap-2 sm:tracking-normal">
         <Link href="#inicio" className="group">
           <span className="text-lg hover:text-sky-700 dark:hover:text-sky-400 hover:border-b dark:border-sky-400 border-sky-700 pb-1 px-2">Início</span>
         </Link>

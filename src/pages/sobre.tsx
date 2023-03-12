@@ -23,7 +23,7 @@ function About() {
         {translate("first-paragraph")}
         <span className="text-sky-700 dark:text-sky-500">Yuri Araujo</span>
       </span>
-      <span className="whitespace-nowrap xl:tracking-tight">
+      <span className="whitespace-nowrap xl:tracking-tight text-center sm:hidden">
         <span className="text-sky-700 dark:text-sky-500">
           {translate("second-paragraph.first-line")}
         </span>{" "}
