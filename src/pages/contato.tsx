@@ -33,7 +33,7 @@ function Contact() {
   const { t: translate } = useTranslation("contact");
 
   const { mutate: sendEmail } = useMutation(
-    (data: ContactFormSchema) => axios.post("http://localhost:3000/api/contato", data),
+    (data: ContactFormSchema) => axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/contato`, data),
     {
       onSuccess: () => {
         toast.success("Email enviado com sucesso!");

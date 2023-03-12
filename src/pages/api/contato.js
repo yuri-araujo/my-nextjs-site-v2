@@ -1,7 +1,4 @@
-// require('dotenv').config()
-
 import sgMail from "@sendgrid/mail"
-
 
 const { SENDGRID_API_KEY, FROM_EMAIL, TO_EMAIL } = process.env
 
