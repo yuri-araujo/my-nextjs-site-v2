@@ -13,9 +13,9 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { toast } from "react-toastify";
 
 const contactFormSchema = z.object({
-  name: z.string(),
+  name: z.string().min(1),
   email: z.string().email(),
-  message: z.string(),
+  message: z.string().min(1),
 });
 
 type ContactFormSchema = z.infer<typeof contactFormSchema>;
