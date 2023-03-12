@@ -46,7 +46,11 @@ export default async function handler(req, res) {
 
   await sgMail.send(msg);
 
-  res.status(200).json({ message: "Message sent!" });
-  res.status(400).json({ message: "Error, Bad request!" });
-  res.status(500).json({ message: "Error, Internal server error!" });
+  try {
+    await sgMail.send(msg);
+    res.status(200).json({ message: "Message sent!" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Error, Internal server error!" });
+  }
 }
