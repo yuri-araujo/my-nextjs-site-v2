@@ -10,6 +10,7 @@ import BrasilSvg from "@/components/BrasilSvg";
 import GenericAnchorCard from "@/components/GenericAnchorCard";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { toast } from "react-toastify";
 
 const contactFormSchema = z.object({
   name: z.string(),
@@ -35,10 +36,10 @@ function Contact() {
     (data: ContactFormSchema) => axios.post("http://localhost:3000/api/contato", data),
     {
       onSuccess: () => {
-        alert("Email enviado com sucesso!");
+        toast.success("Email enviado com sucesso!");
       },
       onError: () => {
-        alert("Erro ao enviar email!");
+        toast.error("Erro ao enviar email!");
       },
     }
   );
@@ -89,7 +90,7 @@ function Contact() {
                   icon={<FaLinkedin />}
                   title="Linkedin"
                   description={translate("linkedin-description")}
-                  link="https://www.linkedin.com/in/yuridsaraujo/"
+                  link="https://www.linkedin.com/in/yuriaraujodev/"
                 />
                 {/* <GenericAnchorCard
                   icon={<FaTwitter />}
