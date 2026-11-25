@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+  --font-serif: var(--font-serif), Georgia, serif;
+  --font-mono: var(--font-mono), ui-monospace, monospace;
+
+  --color-surface: var(--bg);
+  --color-surface-elevated: var(--bg-elevated);
+  --color-surface-subtle: var(--bg-subtle);
+
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+
+  --color-accent-amber: var(--accent-amber);
+  --color-accent-teal: var(--accent-teal);
+
+  --color-line: var(--line);
+
+  --animate-fade-up: fade-up 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-pulse-soft: pulse-soft 3s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+:root {
+  --bg: #f6f4ee;
+  --bg-elevated: #ffffff;
+  --bg-subtle: #ece8df;
+  --ink: #14171f;
+  --ink-muted: #585f6e;
+  --ink-faint: #8c93a3;
+  --line: rgba(20, 23, 31, 0.1);
+  --accent-amber: #c27824;
+  --accent-teal: #0e8a80;
+}
+
+.dark {
+  --bg: #080a0f;
+  --bg-elevated: #0e1118;
+  --bg-subtle: #141925;
+  --ink: #f2efe9;
+  --ink-muted: #949aa8;
+  --ink-faint: #5e6678;
+  --line: rgba(255, 255, 255, 0.085);
+  --accent-amber: #f2b872;
+  --accent-teal: #5ad1c8;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg);
+    color: var(--ink);
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 240ms ease, color 240ms ease;
+  }
+
+  ::selection {
+    background-color: var(--accent-teal);
+    color: #080a0f;
+  }
+}
+
+.bg-dot-grid {
+  background-image: radial-gradient(var(--line) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Custom sleek range slider */
+input[type="range"].lab-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 9999px;
+  background: var(--line);
+  outline: none;
+}
+
+input[type="range"].lab-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: var(--accent-amber);
+  cursor: pointer;
+  border: 2px solid var(--bg-elevated);
+  transition: transform 150ms ease, background-color 150ms ease;
+}
+
+input[type="range"].lab-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.18);
+}
+
+input[type="range"].lab-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: var(--accent-amber);
+  cursor: pointer;
+  border: 2px solid var(--bg-elevated);
+  transition: transform 150ms ease;
+}
